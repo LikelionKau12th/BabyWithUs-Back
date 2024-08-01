@@ -1,12 +1,3 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://13.209.131.43:3306/hackathon
-    username: hackathon
-    password: hackathon
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-server:
-  port: 8080
+  profiles:
+    active: local
