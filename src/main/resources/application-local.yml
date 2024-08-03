@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://13.209.131.43:3306/hackathon
-    username: hackathon
-    password: hackathon
+    url: ${MYSQL_DATABASE_LOCAL_URL}
+    username: ${MYSQL_DATABASE_USERNAME}
+    password: ${MYSQL_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
