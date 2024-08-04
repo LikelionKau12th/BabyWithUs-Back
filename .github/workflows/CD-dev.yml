@@ -29,7 +29,7 @@ jobs:
       run: ./gradlew build -Dspring.profiles.active=${{ secrets.PROFILE }}
 
     - name: Copy files to server
-      uses: appleboy/scp-action@v0.1.0
+      uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SERVER_USER }}
@@ -39,7 +39,7 @@ jobs:
         target: "/home/ec2-user/BabyWithUs-Back/build/libs/"
 
     - name: SSH commands to start application
-      uses: appleboy/ssh-action@v0.1.0
+      uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SERVER_USER }}
