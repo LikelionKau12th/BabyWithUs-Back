@@ -38,13 +38,3 @@ jobs:
         source: "build/libs/*.jar"
         target: "/home/ec2-user/BabyWithUs-Back/build/libs/"
 
-    - name: SSH commands to start application
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: ${{ secrets.SERVER_IP }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd /home/ec2-user/BabyWithUs-Back/build/libs/
-          java -jar BabyWithUs-0.0.1-SNAPSHOT.jar
