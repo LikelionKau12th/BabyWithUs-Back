@@ -4,6 +4,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 permissions:
   contents: read
 
@@ -12,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
+    - name: Checkout
       uses: actions/checkout@v3
 
     - name: Set up JDK 17
@@ -21,11 +22,11 @@ jobs:
         java-version: '17'
         distribution: 'corretto'
 
-       # 이 워크플로우는 gradle build
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-     env:
+    - name: Build with Gradle
+      env:
         MYSQL_DATABASE_URL: ${{ secrets.MYSQL_DATABASE_URL }}
         MYSQL_DATABASE_USERNAME: ${{ secrets.MYSQL_DATABASE_USERNAME }}
         MYSQL_DATABASE_PASSWORD: ${{ secrets.MYSQL_DATABASE_PASSWORD }}
