@@ -40,8 +40,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          export MYSQL_DATABASE_URL=${{ secrets.MYSQL_DATABASE_URL }}
-          export MYSQL_DATABASE_USERNAME=${{ secrets.MYSQL_DATABASE_USERNAME }}
-          export MYSQL_DATABASE_PASSWORD=${{ secrets.MYSQL_DATABASE_PASSWORD }}
           cd /home/ec2-user/BabyWithUs-Back/build/libs/
           java -jar BabyWithUs-0.0.1-SNAPSHOT.jar
