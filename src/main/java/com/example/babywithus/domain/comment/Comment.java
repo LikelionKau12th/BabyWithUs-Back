@@ -1,3 +1,4 @@
+/*
 package com.example.babywithus.domain.comment;
 
 import jakarta.persistence.*;
@@ -11,3 +12,4 @@ public class Comment {
 
 
 }
+*/

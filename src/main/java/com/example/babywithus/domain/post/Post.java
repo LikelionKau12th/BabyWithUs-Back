@@ -1,3 +1,4 @@
+/*
 package com.example.babywithus.domain.post;
 
 import jakarta.persistence.*;
@@ -13,3 +14,4 @@ public class Post {
     @Column(name = "comment_id")
     Long id;
 }
+*/

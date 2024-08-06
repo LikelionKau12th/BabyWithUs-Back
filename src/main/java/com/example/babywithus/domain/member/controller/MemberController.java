@@ -13,20 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(("/api/member"))
 @RequiredArgsConstructor
 public class MemberController {
 
     private final MemberService memberService;
 
-    @PostMapping("/create")
+    @PostMapping("/join")
     public ResponseEntity<ApiResponse<?>>create(@RequestBody MemberCreateRequestDto requestDto){
 
 
-        Long memberId=memberService.createMember(requestDto.getName(),requestDto.getRole());
-        MemberCreateResponseDto memberCreateResponseDto =new MemberCreateResponseDto(memberId);
-
-        return ResponseEntity.ok().body(ApiResponse.success(SuccessType.PROCESS_SUCCESSED,memberCreateResponseDto));
+        memberService.createMember(requestDto.getName(),requestDto.getPassword(),requestDto.getRole());
+        return ResponseEntity.ok().body(ApiResponse.success(SuccessType.PROCESS_SUCCESSED));
 
 
 
