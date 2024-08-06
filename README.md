@@ -20,4 +20,3 @@
 ### 백엔드 개발팀
 
 - [좌민석](https://github.com/jms0324)
-- [문채영](https://github.com/mcy0325) 
